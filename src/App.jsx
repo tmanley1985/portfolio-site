@@ -3,6 +3,7 @@ import { ExternalLink, GithubIcon, BookOpen, Link } from "lucide-react"
 
 import "./App.css"
 import projects from "./data/projects"
+import contactLinks from "./data/contacts"
 import ProjectCard from "./components/ProjectCard"
 
 function App() {
@@ -115,13 +116,28 @@ function App() {
             </svg>
           </div>
         </section>
-        <section
-          id="contact"
-          // We're adding pt-32 which is approximately 128px because I cannot add margin because of the margin collapse issue.
-          // Instead I'm adding padding to push everything down the size of the svg (100px) plus a bit extra.
-          className="relative pt-32 bg-blue-500 text-white text-center gap-4"
-        >
-          <h2 className="text-4xl">Contact Me</h2>
+        <section className="bg-gradient-to-br from-rose-400 to-rose-500 text-white pt-32 pb-16">
+          <div className="max-w-4xl mx-auto px-6 text-center">
+            <h2 className="text-4xl font-bold mb-4">Contact Me</h2>
+            <p className="text-xl mb-12 text-rose-100">
+              Get in touch! I'd love to hear from you.
+            </p>
+
+            <div className="flex flex-col md:flex-row items-center justify-center gap-8">
+              {contactLinks.map(link => (
+                <a
+                  key={link.text}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 text-rose-100 hover:text-white transition-all duration-200 hover:scale-105"
+                >
+                  {link.icon}
+                  <span className="text-lg">{link.text}</span>
+                </a>
+              ))}
+            </div>
+          </div>
         </section>
       </main>
     </>
