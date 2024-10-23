@@ -1,30 +1,33 @@
-import { Link } from "react-router-dom"
 import { HashLink } from "react-router-hash-link"
+import { ExternalLink, GithubIcon, BookOpen, Link } from "lucide-react"
 
 import "./App.css"
+import projects from "./data/projects"
+import ProjectCard from "./components/ProjectCard"
 
 function App() {
   return (
+    // TODO: Add image for head section!
     <>
       <header>
         <nav className="bg-gray-800 p-6 w-full">
           <ul className="flex items-center text-gray-100 gap-3">
             <li className="mr-auto font-bold text-xl">
-              <Link to={"/"}>Home</Link>
+              <a href={"/"} alt="Link to home">
+                Home
+              </a>
             </li>
             <li>
               <HashLink smooth to="/#projects">
                 Projects
               </HashLink>
             </li>
-
             <li>
               <HashLink smooth to="/#contact">
                 Contact
               </HashLink>
             </li>
             <li>
-              {/* TODO: Add resume to public folder!! */}
               <a href={"/resume.pdf"} download>
                 Resume
               </a>
@@ -75,9 +78,26 @@ function App() {
 
         <section
           id="projects"
-          className="relative mt-[100px] flex flex-col md:flex-row justify-center items-center py-3 px-2 bg-white text-blue-500 gap-4"
+          className="relative mt-[100px] max-w-6xl mx-auto py-3 px-2 bg-white text-blue-500 gap-4"
         >
-          <h2 className="text-4xl">Projects</h2>
+          {/* <h2 className="text-4xl">Projects</h2> */}
+          {projects.map(({ category, projects: categoryProjects }) => (
+            <div key={category} className="mb-12">
+              <div className="flex items-center gap-2 mb-6">
+                {category === "Work" && <Link className="w-6 h-6" />}
+                {category === "Open Source" && (
+                  <GithubIcon className="w-6 h-6" />
+                )}
+                {category === "Learning" && <BookOpen className="w-6 h-6" />}
+                <h2 className="text-2xl font-bold text-gray-900">{category}</h2>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {categoryProjects.map((project, index) => (
+                  <ProjectCard key={index} {...project} category={category} />
+                ))}
+              </div>
+            </div>
+          ))}
         </section>
         <section
           id="contact"
