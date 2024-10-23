@@ -53,7 +53,7 @@ const ProjectCard = ({
             className="text-sm text-blue-600 hover:text-blue-800 flex items-center gap-1"
           >
             <ExternalLink className="w-4 h-4" />
-            Live Demo
+            View
           </a>
         )}
         {repo && (

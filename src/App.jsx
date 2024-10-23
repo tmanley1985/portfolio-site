@@ -12,24 +12,49 @@ function App() {
     <>
       <header>
         <nav className="bg-gray-800 p-6 w-full">
-          <ul className="flex items-center text-gray-100 gap-3">
+          <ul className="flex items-center text-gray-200 gap-3">
             <li className="mr-auto font-bold text-xl">
-              <a href={"/"} alt="Link to home">
-                Home
+              <a
+                href="/"
+                className=" hover:text-white transition-colors duration-200"
+                alt="Link to home"
+              >
+                Thomas Manley
               </a>
             </li>
             <li>
-              <HashLink smooth to="/#projects">
+              <HashLink
+                smooth
+                to="/#projects"
+                className="text-gray-300 hover:text-white transition-colors duration-200"
+              >
                 Projects
               </HashLink>
             </li>
             <li>
-              <HashLink smooth to="/#contact">
+              <HashLink
+                smooth
+                to="/#contact"
+                className="text-gray-300 hover:text-white transition-colors duration-200"
+              >
                 Contact
               </HashLink>
             </li>
             <li>
-              <a href={"/resume.pdf"} download>
+              <a
+                href={"https://codelikeamanley.com/"}
+                className="text-gray-300 hover:text-white transition-colors duration-200"
+                alt="Link to coding blog"
+              >
+                Blog
+              </a>
+            </li>
+            <li>
+              <a
+                href={"/resume.pdf"}
+                className="text-gray-300 hover:text-white transition-colors duration-200"
+                download
+              >
                 Resume
               </a>
             </li>
@@ -40,7 +65,7 @@ function App() {
       <main>
         <section
           id="hero"
-          className="relative flex flex-col md:flex-row justify-center items-center py-3 px-2 bg-blue-500 text-white gap-4"
+          className="relative flex flex-col md:flex-row justify-center items-center py-3 px-2 bg-gradient-to-b from-blue-400 to-blue-500 text-white gap-4"
         >
           <picture className="inline-block">
             <img src="/images/hero.png" alt="Hero image" />
@@ -79,7 +104,7 @@ function App() {
 
         <section
           id="projects"
-          // We need the mt-100px because we need to push the content down the same height as the svg.
+          // We need the pt-100px because we need to push the content down the same height as the svg.
           className="relative pt-32 max-w-full mx-auto py-4 px-8 bg-white gap-4"
         >
           <div className="text-center">
@@ -104,7 +129,7 @@ function App() {
           ))}
           <div className="wave">
             <svg
-              data-name="Layer 1"
+              data-name="Layer 2"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 1200 120"
               preserveAspectRatio="none"
@@ -116,7 +141,10 @@ function App() {
             </svg>
           </div>
         </section>
-        <section className="bg-gradient-to-br from-rose-400 to-rose-500 text-white pt-32 pb-16">
+        <section
+          id="contact"
+          className="bg-gradient-to-b from-rose-400 to-rose-500 text-white pt-32 pb-16"
+        >
           <div className="max-w-4xl mx-auto px-6 text-center">
             <h2 className="text-4xl font-bold mb-4">Contact Me</h2>
             <p className="text-xl mb-12 text-rose-100">

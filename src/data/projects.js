@@ -49,9 +49,9 @@ const projects = [
       {
         title: "GhostTunes",
         description:
-          "Led development of a music streaming platform's web player and API, integrating frontend and backend systems for seamless audio delivery. GhostTunes is no longer online.",
+          "Led development of a music streaming platform's web player and API, integrating frontend and backend systems for seamless audio delivery. GhostTunes is no longer online, so this link goes to the Wikipedia entry for it.",
         technologies: ["PHP", "Laravel", "JS", "HTML", "CSS"],
-        link: "https://ghosttunes.com",
+        link: "https://en.wikipedia.org/wiki/GhostTunes#/media/File:GhostTunes_mobile_app.PNG",
       },
       {
         title: "Garth Brooks Official Site",
@@ -77,14 +77,15 @@ const projects = [
         description:
           "A lightweight PHP library implementing transducers to optimize memory usage in functional programming operations.",
         technologies: ["PHP"],
-        repo: "https://github.com/tmanley1985/hl7-php",
+
+        repo: "https://github.com/tmanley1985/php-transducers",
       },
       {
         title: "HL7-PHP",
         description:
           "A fluent API library for healthcare data interchange (HL7) message parsing and construction, simplifying medical systems integration.",
         technologies: ["PHP"],
-        repo: "https://github.com/tmanley1985/php-transducers",
+        repo: "https://github.com/tmanley1985/hl7-php",
       },
       {
         title: "Koeus",
@@ -110,7 +111,7 @@ const projects = [
         description:
           "Implemented simplified Redis server in Go, parsing RESP protocol and managing in-memory data structures. This was an effort to learn more about low level programming, protocol implementation and concurrency.",
         technologies: ["Go"],
-        repo: "https://github.com/tmanley1985/algorithm_kata",
+        repo: "https://github.com/tmanley1985/redis-clone",
       },
       {
         title: "Algorithm Kata",
