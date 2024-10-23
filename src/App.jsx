@@ -1,10 +1,16 @@
-import { useState } from "react"
+import { useRef } from "react"
 import { Link } from "react-router-dom"
 import reactLogo from "./assets/react.svg"
 import viteLogo from "/vite.svg"
 import "./App.css"
 
 function App() {
+  const projectsRef = useRef(null) // Use a ref to target the section
+  const contactRef = useRef(null) // Use a ref to target the section
+  const handleScroll = ref => {
+    ref.current.scrollIntoView({ behavior: "smooth" }) // Smooth scroll function
+  }
+
   return (
     <>
       <header>
@@ -14,14 +20,18 @@ function App() {
               <Link to={"/"}>Home</Link>
             </li>
             <li>
-              <Link to={"/projects"}>Projects</Link>
+              <button onClick={() => handleScroll(projectsRef)}>
+                Projects
+              </button>
             </li>
             <li>
-              <Link to={"/contact"}>Contact</Link>
+              <button onClick={() => handleScroll(contactRef)}>Contact</button>
             </li>
             <li>
               {/* TODO: Add resume to public folder!! */}
-              <Link to={"/resume"}>Resume</Link>
+              <a href={"/resume.pdf"} download>
+                Resume
+              </a>
             </li>
           </ul>
         </nav>
@@ -65,6 +75,21 @@ function App() {
               ></path>
             </svg>
           </div>
+        </section>
+
+        <section
+          ref={projectsRef}
+          id="projects"
+          className="relative mt-[100px] flex flex-col md:flex-row justify-center items-center py-3 px-2 bg-white text-blue-500 gap-4"
+        >
+          <h2 className="text-4xl">Projects</h2>
+        </section>
+        <section
+          ref={contactRef}
+          id="contact"
+          className="relative mt-[100px] flex flex-col md:flex-row justify-center items-center py-3 px-2 bg-white text-blue-500 gap-4"
+        >
+          <h2 className="text-4xl">Contact Me</h2>
         </section>
       </main>
     </>
