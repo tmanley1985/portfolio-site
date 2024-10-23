@@ -17,7 +17,6 @@ function App() {
               <Link to={"/projects"}>Projects</Link>
             </li>
             <li>
-              {/* TODO: Add resume to public folder!! */}
               <Link to={"/contact"}>Contact</Link>
             </li>
             <li>
@@ -31,22 +30,26 @@ function App() {
       <main>
         <section
           id="hero"
-          className="relative flex flex-col md:flex-row items-center bg-blue-500 text-white"
+          className="relative flex flex-col md:flex-row justify-center items-center py-3 px-2 bg-blue-500 text-white gap-4"
         >
           <picture className="inline-block">
             <img src="/images/hero.png" alt="Hero image" />
           </picture>
 
-          <div class="content inline-block">
-            <h1>
-              I'm <span className="text-red-600">Thomas</span>
+          <div class="flex flex-col items-center md:items-start gap-4">
+            <h1 className="text-5xl">
+              I'm <span className="text-yellow-400">Thomas</span>
             </h1>
-            <p>
+            <p className="text-xl">
               I'm a seasoned technologist and software engineer specializing in
               fullstack development.
             </p>
-            <a href="/projects" class="cta">
-              See My Work
+            <a
+              href={"/resume.pdf"}
+              className="inline-block text-center max-w-xs bg-red-400 text-white font-bold py-2 px-4 rounded hover:bg-red-500 transition duration-300"
+              download
+            >
+              Get My Resume
             </a>
           </div>
           <div className="wave">
