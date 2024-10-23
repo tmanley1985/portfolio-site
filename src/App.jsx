@@ -70,7 +70,7 @@ function App() {
             >
               <path
                 d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
-                class="shape-fill"
+                class="shape-fill-blue"
               ></path>
             </svg>
           </div>
@@ -78,9 +78,12 @@ function App() {
 
         <section
           id="projects"
-          className="relative mt-[100px] max-w-6xl mx-auto py-3 px-2 bg-white text-blue-500 gap-4"
+          // We need the mt-100px because we need to push the content down the same height as the svg.
+          className="relative pt-32 max-w-full mx-auto py-4 px-8 bg-white gap-4"
         >
-          {/* <h2 className="text-4xl">Projects</h2> */}
+          <div className="text-center">
+            <h2 className="text-5xl mx-auto">Projects</h2>
+          </div>
           {projects.map(({ category, projects: categoryProjects }) => (
             <div key={category} className="mb-12">
               <div className="flex items-center gap-2 mb-6">
@@ -98,10 +101,25 @@ function App() {
               </div>
             </div>
           ))}
+          <div className="wave">
+            <svg
+              data-name="Layer 1"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 1200 120"
+              preserveAspectRatio="none"
+            >
+              <path
+                d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+                class="shape-fill-white"
+              ></path>
+            </svg>
+          </div>
         </section>
         <section
           id="contact"
-          className="relative mt-[100px] flex flex-col md:flex-row justify-center items-center py-3 px-2 bg-white text-blue-500 gap-4"
+          // We're adding pt-32 which is approximately 128px because I cannot add margin because of the margin collapse issue.
+          // Instead I'm adding padding to push everything down the size of the svg (100px) plus a bit extra.
+          className="relative pt-32 bg-blue-500 text-white text-center gap-4"
         >
           <h2 className="text-4xl">Contact Me</h2>
         </section>
